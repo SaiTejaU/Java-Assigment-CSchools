@@ -1,8 +1,20 @@
 import java.util.*;
 public class Calculator {
-	interface cal
+	interface op1
 	{
-		void op(int x,int y);
+		void add(int x,int y);
+	}
+	interface op2
+	{
+		void difference(int x,int y);
+	}
+	interface op3
+	{
+		void product(int x,int y);
+	}
+	interface op4
+	{
+		void safeDivision(int x,int y);
 	}
 	public static void main(String[] args) 
 	{
@@ -12,16 +24,16 @@ public class Calculator {
 		int n=sc.nextInt();
 		System.out.print("Enter the operation (+ or - or * or /) to perform : ");
 		char c=sc.next().charAt(0);
-		cal add=(int a,int b)->{
+		op1 add=(int a,int b)->{
 			System.out.println(a+b);
 		};
-		cal difference=(int a,int b)->{
+		op2 difference=(int a,int b)->{
 			System.out.println(a-b);
 		};
-		cal product=(int a,int b)->{
+		op3 product=(int a,int b)->{
 			System.out.println(a*b);
 		};
-		cal safeDivision=(int a,int b)->{
+		op4 safeDivision=(int a,int b)->{
 			System.out.println(a/b);
 		};
 		sc.close();
@@ -29,22 +41,22 @@ public class Calculator {
 		{
 		case('+'):
 		{
-			add.op(m,n);
+			add.add(m,n);
 			break;
 		}
 		case('-'):
 		{
-			difference.op(m,n);
+			difference.difference(m,n);
 			break;
 		}
 		case('*'):
 		{
-			product.op(m,n);
+			product.product(m,n);
 			break;
 		}
 		case('/'):
 		{
-			safeDivision.op(m,n);
+			safeDivision.safeDivision(m,n);
 			break;
 		}
 		default:
