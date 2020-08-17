@@ -1,6 +1,5 @@
-//import java.util.*;
 public class generic<E> {
-	public static <E> void get_result(E n)
+	public <E> void get_result(E n)
 	{
 		try
 		{
@@ -9,7 +8,7 @@ public class generic<E> {
 				throw new Exception();
 			}
 			else {
-				System.out.println("2/3 of "+n+" is : " +((int)n*2)/3);
+				System.out.println("2/3 of "+n+" is : " +((Integer.parseInt(String.valueOf(n))*2)/3));
 			}
 		} 
 		catch(Exception e) 
@@ -19,7 +18,8 @@ public class generic<E> {
 	}
 	public static void main(String[] args) 
 	{
-		get_result(1000);
-		get_result("one");
+		generic g=new generic();
+		g.get_result(1000);
+		g.get_result("one");
 	}
 }
